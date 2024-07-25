@@ -61,7 +61,7 @@ for _ in range(b-1):
     ans = ans * a
 print(f"The answer is {ans}. ({a} in the power of {b})")
 
-# Task 6 (Bonus)
+# Task 6 (Bonus) solution 1
 num: int = int(input("Please enter a number: "))
 is_it_there: bool = False
 while True:
@@ -81,8 +81,16 @@ while True:
         break
 print(f"{is_it_there}- the digit {dig} is in the number you entered" if is_it_there else
       f"{is_it_there} - the digit {dig} is NOT in the number you entered")
+# Task 6 (Bonus) solution 2
+num: int = int(input("Please enter a number: "))
+digit: int = int(input("Please enter a single digit: "))
 
-# Task 7 (Bonus) solution 1
+is_it_there: bool = str(digit) in str(num)
+
+print(is_it_there)
+
+
+# Task 7 (Bonus)
 num1: int = int(input("Please enter a number: "))
 num2: int = int(input("Please enter a number: "))
 min: int = num1 if num1 < num2 else num2
@@ -91,13 +99,6 @@ for _ in range(2, min+1):
     if num1 % _ == 0 and num2 % _ == 0:
         maxdiv = _
 print(f"The max divisor of {max} and {min} is: {maxdiv}.")
-# Task 7 (Bonus) solution 2
-num: int = int(input("Please enter a number: "))
-digit: int = int(input("Please enter a single digit: "))
-
-is_it_there: bool = str(digit) in str(num)
-
-print(is_it_there)
 
 # Task 8
 is_it_prime: bool = True
