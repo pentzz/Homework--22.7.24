@@ -6,31 +6,27 @@ while True:
         continue
     else:
         break
-for i in range(1, top):
-    print(i, end=",")
-print(top)
+for i in range(1, top + 1):
+    print(i, end=" ")
+print("")
 
 # Task 2
 a: int = int(input("Please enter a number: "))
 b: int = int(input("Please enter a number: "))
 if a > b:
     for i in range(b, a + 1):
-        print(i, end=",")
+        print(i, end=" ")
 elif b > a:
     for i in range(a, b + 1):
-        print(i, end=",")
+        print(i, end=" ")
 else:
-    print("The numbers you entered are equal.")
+    print(f"The numbers you entered are equal.({a})")
 
 # Task 3
-n: int = int(input("Please enter an even number: "))
-while n % 2 != 0:
-    print(f"The number need to be even.\nTry again..")
-    n: int = int(input("Please enter an even number: "))
-for i in range(0, n):
+n: int = int(input("Please enter a number: "))
+for i in range(0, n+1):
     if i % 2 == 0:
-        print(i, end=",")
-print(n, end=".")
+        print(i, end=" ")
 
 # Task 4
 max: int = int(input("Please enter a number (max): "))
@@ -48,6 +44,8 @@ while den > max:
         den: int = int(input("Please enter a number (den): "))
     else:
         print(f"The program has finished because your answer didn't match what requested. ")
-for i in range(1, max+1):
-    if i % den == 0:
-        print(i, end=" ")
+        break
+if max >= den:
+    for i in range(1, max+1):
+        if i % den == 0:
+            print(i, end=" ")
