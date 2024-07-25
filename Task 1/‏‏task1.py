@@ -22,12 +22,12 @@ b: int = int(input("Please enter the second number: "))
 c: int = int(input("Please enter the third number: "))
 if a == b and a == c:
     print(f"All the numbers are equal [ {a} ]")
-elif a > b and a > c:
-    print(f"The bigger number is: {a}")
-elif b > a and b > c:
-    print(f"The bigger number is: {b}")
-elif c > a and c > a:
-    print(f"The bigger number is: {c}")
+elif a >= b and a >= c:
+    print(f"The biggest number is: {a}")
+elif b >= a and b >= c:
+    print(f"The biggest number is: {b}")
+else:
+    print(f"The biggest number is: {c}")
 # Task 4
 movie_len: int = int(input("Please enter the movie len (in minutes): "))
 hours: int = int(movie_len / 60)
