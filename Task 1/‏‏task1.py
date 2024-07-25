@@ -14,7 +14,7 @@ print("")
 # Task 2
 a: int = int(input("Please enter a number: "))
 b: int = int(input("Please enter a number: "))
-print(f"The average is : {(a+b)/2}")
+print(f"The average is : {float(a+b)/2:.2f}")
 
 # Task 3
 a: int = int(input("Please enter the first number: "))
@@ -28,29 +28,52 @@ elif b >= a and b >= c:
     print(f"The biggest number is: {b}")
 else:
     print(f"The biggest number is: {c}")
+
 # Task 4
 movie_len: int = int(input("Please enter the movie len (in minutes): "))
 hours: int = int(movie_len / 60)
 minutes: int = int(movie_len % 60)
 print(f"The movie len is: {hours} hour(s) and {minutes} minute(s)")
+
 # Task 5
 number: int = int(input("Please enter a 4 digit number: "))
+number = number * -1 if number < 0 else number
+while len(str(number)) != 4:
+    number: int = int(input("You need to enter 4 digit number.Try again..\nPlease enter a 4 digit number: "))
+    number = number * -1 if number < 0 else number
 print(f"The unity digit in the number is: {number % 10}")
+
 # Task 6
 number: int = int(input("Please enter a 4 digit number: "))
+number = number * -1 if number < 0 else number
+while len(str(number)) != 4:
+    number: int = int(input("You need to enter 4 digit number.Try again..\nPlease enter a 4 digit number: "))
+    number = number * -1 if number < 0 else number
 print(f"The 2nd unity digit in the number is: {int(number // 10 % 10)}")
+
 # Task 7
 number: int = int(input("Please enter a 2 digit number: "))
-print(f"The sum of the digits of the number is: {int(number % 10 + number / 10)}")
+number = number * -1 if number < 0 else number
+while len(str(number)) != 2:
+    number: int = int(input("You need to enter 2 digit number.Try again..\nPlease enter a 2 digit number: "))
+    number = number * -1 if number < 0 else number
+print(f"The sum of the digits of the number is: {int(number % 10 + number // 10)}")
+
 # Task 8
 number: int = int(input("Please enter a 2 digit number: "))
+number = number * -1 if number < 0 else number
+while len(str(number)) != 2:
+    number: int = int(input("You need to enter 2 digit number.Try again..\nPlease enter a 2 digit number: "))
+    number = number * -1 if number < 0 else number
 print(f"The new number is: {int(number % 10)}{int(number / 10)}")
+
 # Task 9
 number: int = int(input("Please enter a number: "))
 while number == 0:
     print("Error! the number need to be different than 0.\nTry again!")
     number: int = int(input("Please enter a number: "))
 print(f"The number {number} is even" if number % 2 == 0 else f"The number {number} is odd")
+
 # Task 10
 while True:
     salary: int = int(input("Please enter your salary: "))
@@ -73,6 +96,7 @@ elif salary > 6000:
     print(f"The tax you need to pay is {(salary - 6000) * 0.1}")
 else:
     print(f"You dont need to pay tax.")
+
 # Task 11
 age: int = int(input("Please enter your age: "))
 if age >= 8:
