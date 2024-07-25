@@ -49,9 +49,13 @@ print(f"The serial number of the highest number is {ans+1}. (the number {num_lis
 a: int = int(input("Please enter a number: "))
 b: int = int(input("Please enter a number: "))
 ans: int = 0
+is_one_neg: bool = False
+is_one_neg = True if a > 0 and b < 0 or a < 0 and b > 0 else is_one_neg
+a = a * -1 if a < 0 else a
+b = b * -1 if b < 0 else b
 for _ in range(a):
     ans = ans + b
-print(f"The answer is {ans}")
+print(f"The answer is {ans * -1}" if is_one_neg else f"The answer is {ans}")
 
 # Task 5
 a: int = int(input("Please enter a number: "))
@@ -61,7 +65,7 @@ for _ in range(b-1):
     ans = ans * a
 print(f"The answer is {ans}. ({a} in the power of {b})")
 
-# Task 6 (Bonus) solution 1
+# Task 6 (Bonus)
 num: int = int(input("Please enter a number: "))
 is_it_there: bool = False
 while True:
@@ -83,12 +87,11 @@ print(f"{is_it_there}- the digit {dig} is in the number you entered" if is_it_th
       f"{is_it_there} - the digit {dig} is NOT in the number you entered")
 # Task 6 (Bonus) solution 2
 num: int = int(input("Please enter a number: "))
-digit: int = int(input("Please enter a single digit: "))
-
-is_it_there: bool = str(digit) in str(num)
-
+dig: int = int(input("Please enter a single digit: "))
+while int(dig / 10) != 0:
+    digit: int = int(input("Thats not a singel digit.\nPlease enter a single digit: "))
+is_it_there: bool = str(dig) in str(num)
 print(is_it_there)
-
 
 # Task 7 (Bonus)
 num1: int = int(input("Please enter a number: "))
@@ -98,7 +101,7 @@ maxdiv: int = 1
 for _ in range(2, min+1):
     if num1 % _ == 0 and num2 % _ == 0:
         maxdiv = _
-print(f"The max divisor of {max} and {min} is: {maxdiv}.")
+print(f"The max divisor of {num1} and {num2} is: {maxdiv}.")
 
 # Task 8
 is_it_prime: bool = True
